@@ -1,0 +1,34 @@
+Input1:3521 
+Input2:2452 
+Input3:1352
+Output:7
+Explanation: key=(Thousands digit of input1*hundreds digit of input2)- largest digit of input3
+//program
+import java.util.*;
+class Strings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int n3=sc.nextInt();
+        int t=(n1/1000)%100;
+        int h=(n2/100)%10;
+        int l=largest(n3);
+        int key=(t*h)-l;
+        System.out.println(key);
+    }
+    public static int largest(int n)
+    {
+        int largest=0;
+        while(n>0)
+        {
+            int digit=n%10;
+            if(digit>largest)
+            {
+                largest=digit;
+            }
+            n/=10;
+        }
+        return largest;
+    }
+}
