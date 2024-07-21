@@ -1,0 +1,32 @@
+String Concatenation Input1:fruits 
+Input2:are good 
+Output:utsroigfedo
+Explanation: concatenate both the strings, remove duplicate alphabets and white spaces, arrange the alphabets in descending order.
+//program
+import java.util.*;
+class Strings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        String ss = str1 + str2;
+        HashSet<Character> sett=new HashSet<>();
+        for(char c:ss.toCharArray())
+        {
+            if(c!=' ')
+            {
+                sett.add(c);
+            }
+        }
+        List<Character> ls=new ArrayList<>(sett);
+        ls.sort(Collections.reverseOrder());
+        StringBuilder res=new StringBuilder();
+        for(char c:ls)
+        {
+            res.append(c);
+        }
+        System.out.println(res.toString());
+    }
+}
+
+
