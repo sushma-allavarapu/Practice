@@ -1,0 +1,26 @@
+class Solution {
+    public int print2largest(int[] arr) {
+        // Code Here
+        int n=arr.length;
+        int first=Integer.MIN_VALUE;
+        int last=Integer.MIN_VALUE;
+        if(n<2)
+        {
+            return -1;
+        }
+        for(int num : arr)
+        {
+            if(num>first)
+            {
+                last=first;
+                first=num;
+            }
+            else if(num>last && num<first)
+            {
+                last=num;
+            }
+        }
+        return last == Integer.MIN_VALUE ? -1 : last;
+        
+    }
+}
