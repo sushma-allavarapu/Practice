@@ -1,0 +1,22 @@
+//input:n = 5, arr1[] = {1, 2, 3, 4, 5}  
+m = 5, arr2 [] = {1, 2, 3, 6, 7}
+//output:1 2 3 4 5 6 7
+
+class Solution
+{
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        Set<Integer> s=new HashSet<>();
+        for(int num:arr1)
+        {
+            s.add(num);
+        }
+        for(int num:arr2)
+        {
+            s.add(num);
+        }
+        ArrayList<Integer> arr=new ArrayList<>(s);
+        Collections.sort(arr);
+        return arr;
+    }
+}
