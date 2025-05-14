@@ -1,0 +1,27 @@
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+    String a=str1+str2;
+    String b=str2+str1;
+    int x=str1.length();
+    int y=str2.length();
+    if(a.equals(b))
+    {
+        int w=gcd(x,y);
+        return str1.substring(0,w);
+
+    }
+    else
+    {
+        return "";
+    }
+        
+    }
+    public int gcd(int x,int y)
+    {
+        if(y==0)
+        {
+            return x;
+        }
+        return gcd(y,x%y);
+    }
+}
